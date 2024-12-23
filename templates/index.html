@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="{{ url_for('static', filename='overlay.js') }}"></script> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<header>
+     <h1>Nullify</h1>
+</header>
+
+<body>
+    <!-- Three.JS : interative overlay that displays objects rejecting cursor symbolize your opps -- onclick disappear  -->
+    <div id="overlay-container">
+        <div id="black-screen"></div>
+        <canvas id="overlay"></canvas>
+        <!-- <img id="overlay-logo" src="{{ url_for('static', filename='images/overlay_logo.png') }}" alt="Overlay Logo"> -->
+    </div>    
+
+    <div class="tutorial"> </div>
+
+    <div class="main">
+        <div id="intro">
+            <h2> Welcome to Nullify!</h2>
+            <p>Find all your Instagram Unfollowers Opps Today.</p>
+        </div>
+
+        <form action="/find_unfollowers" method="POST"> 
+            <div class="flex-container">
+                <div id="left">
+                    <h3> Followers List: </h3>
+                    <!-- <label for="following">Enter accounts you are following (one username per line):</label><br> -->
+                    <textarea name="followers" rows="20" cols="60"></textarea>
+                </div>
+
+                <div id="right">
+                    <h3> Following List: </h3>
+                    <!-- <label for="followers">Enter your followers (one username per line):</label><br> -->
+                    <textarea name="following" rows="20" cols="60"></textarea>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Nullify. All Rights Reserved.</p>
+    </footer>
+
+    <!-- <scriptsrc="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script> -->
+    <script src="{{ url_for('static', filename='js/overlay.js') }}"></script>
+</body>
+
+</html>
+
+<!-- cd Nullify
+flask run -->
+<!-- python app.py  -->

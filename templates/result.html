@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+
+</head>
+<body>
+
+    <div class="user-info">
+        <div class="user-name">
+            <div>{{ username }}</div>
+        </div>
+
+        <div class="user-stats">
+            <div>{{ post }} posts</div>
+            <div>{{ followers }} followers</div>
+            <div>{{ following }} following</div>
+        </div>
+
+        <div class="name">
+            <div>{{ name }}</div>
+        </div>
+        
+    </div>
+
+    <div class="result-container">
+        {% if error_message %}
+            <div class="error">{{ error_message }}</div>
+        {% endif %}
+        
+        <div id="unfollower">
+            <h2>Unfollowers </h2>
+            <h3>(Users that don't follow you back):  {{num_unfollow}}</h3>
+            {% if unfollowers %}
+                <div class="scroll-container">
+                    {% for user in unfollowers %}
+                        <div class="user">{{ user[0] }} ({{ user[1] or 'No Name' }})</div>
+                    {% endfor %}
+                </div>
+                
+            {% else %}
+                <p>No unfollowers found.</p>
+            {% endif %}
+        </div>
+
+        <div id="not_folllowing">
+            <h2>Non-Followed</h2>
+            <h3>(Users you don't follow back): {{num_non_followees}}</h3>
+            {% if non_followees %}
+                <div class="scroll-container">
+                    {% for user in non_followees %}
+                        <div class="user">{{ user[0] }} ({{ user[1] or 'No Name' }})</div>
+                    {% endfor %}
+                </div>
+                
+            {% else %}
+                <p>No non-followees found.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <br>
+    <!-- <a href="/">Go Back</a>
+    <button href="/"> Back </button> -->
+
+    <footer>
+        <p>&copy; 2024 Nullify. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

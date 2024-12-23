@@ -1,0 +1,114 @@
+/* General Body Styling */
+body {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+#intro {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.main {
+    height: 600px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+#left {
+    margin-right: 20px;
+}
+
+textarea {
+    background-color: rgba(49, 49, 49, 0.819);
+    color: white;
+}
+
+button {
+    padding: 10px 80px 10px 80px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+}
+
+/* 3D Overlay Styling */
+#overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Ensure it covers the full width */
+    height: 100vh; /* Ensure it covers the full height */
+    z-index: 9999;
+    background-color: #181818; /* Dark background for the overlay */
+    transition: opacity 1s ease-out; /* Smooth fade-out */
+}
+
+#overlay {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#overlay-logo {
+    position: absolute;
+    top: 20%; /* Position logo towards the top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px; /* Adjust the width of the logo */
+    height: auto;
+    z-index: 10; /* Ensure the logo is on top of the 3D scene */
+}
+
+/* Dissolve Animation */
+@keyframes dissolve {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+#overlay-container.dissolve {
+    animation: dissolve 5s forwards; /* Extended to 5 seconds for a slower dissolve */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #181818;
+    z-index: 9999;
+}
+
+#black-screen {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Start fully off-screen */
+    width: 100%; /* Covers the entire viewport when moved */
+    height: 100%;
+    background-color: #181818;
+    z-index: 1000; /* Above everything else */
+    transition: left 1s ease-in-out; /* Smooth transition for sliding effect */
+}
+
+/* Adjustments to Button for Visibility During Animation */
+button {
+    position: relative;
+    z-index: 5; /* Ensure buttons are above any overlay or logo */
+}

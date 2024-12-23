@@ -1,0 +1,46 @@
+body{
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;          /* Stack the items vertically */
+    align-items: center;            /* Center items horizontally */
+    justify-content: center;  
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+.user-name, .user-stats, .name {
+    display:flex;
+    gap: 10px;
+    padding: 10px;   
+}
+
+.result-container {
+    display: flex;                /* Arrange children horizontally */
+    gap: 20px; 
+}
+
+.result-container > div {
+    flex: 1;                      /* Make both sections take equal space */
+    padding: 20px;
+}
+
+.user{
+    background-color:#282828 ;
+    padding: 30px;
+    margin-bottom: 20px;
+    max-width: 90%;
+}
+.scroll-container{
+    max-height: 500px;
+    border: 2px solid #323131;
+    overflow-y: scroll;      
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+footer{
+    text-align: center;
+}
