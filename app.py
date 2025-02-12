@@ -6,10 +6,10 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-# def load_file(file_path):
-#         with open(file_path, 'r') as f:
-#             return f.read()
-#  # Load the test files
+def load_file(file_path):
+        with open(file_path, 'r') as f:
+            return f.read()
+ # Load the test files
 # followers_input = load_file("test1.txt")
 # following_input = load_file("test2.txt")
 
